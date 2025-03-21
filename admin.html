@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - SportShop</title>
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <h1 class="text-center">Quản trị SportShop</h1>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-link nav-link" id="logout-button">Đăng xuất</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="container mt-5">
+        <h2>Quản lý sản phẩm</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="admin-product-list">
+            </tbody>
+        </table>
+        <h3>Thêm sản phẩm mới</h3>
+        <form id="add-product-form">
+            <div class="mb-3">
+                <label for="product-name" class="form-label">Tên</label>
+                <input type="text" class="form-control" id="product-name" required>
+            </div>
+            <div class="mb-3">
+                <label for="product-price" class="form-label">Giá</label>
+                <input type="number" class="form-control" id="product-price" required>
+            </div>
+            <div class="mb-3">
+                <label for="product-image" class="form-label">URL hình ảnh</label>
+                <input type="url" class="form-control" id="product-image" required>
+            </div>
+            <div class="mb-3">
+                <label for="product-description" class="form-label">Mô tả</label>
+                <textarea class="form-control" id="product-description" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+        </form>
+    </div>
+
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Chỉnh sửa sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-product-form">
+                        <div class="mb-3">
+                            <label for="edit-product-name" class="form-label">Tên</label>
+                            <input type="text" class="form-control" id="edit-product-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-product-price" class="form-label">Giá</label>
+                            <input type="number" class="form-control" id="edit-product-price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-product-image" class="form-label">URL hình ảnh</label>
+                            <input type="url" class="form-control" id="edit-product-image" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-product-description" class="form-label">Mô tả</label>
+                            <textarea class="form-control" id="edit-product-description" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            © 2025 SportShop:
+            <a class="text-dark" href="#">sportshop.vn</a>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
